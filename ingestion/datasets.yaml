@@ -1,0 +1,412 @@
+# CT Town Personas — Dataset Registry
+# All filters verified against real CTData CSV schemas via check_schemas.py
+# ──────────────────────────────────────────────────────────────────────────────
+
+datasets:
+
+  # ── DEMOGRAPHICS ─────────────────────────────────────────────────────────────
+
+  - name: median_age_by_town
+    resource_id: 9c57dea5-ec15-4efa-afb9-3987309c1680
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Median Age by Town — ACS 5-year"
+    total_filters:
+      Gender: "Total"
+      Race/Ethnicity: "All"
+    measure_filter: "Number"
+    canonical_variable: "Median Age"
+
+  - name: population_by_age_by_town
+    resource_id: 12e2787a-cf25-487e-adab-b8d54cde0ca3
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Population by Age by Town — ACS 5-year"
+    # No 'Total' gender — Female+Male only. Handled in feature_builder by summing.
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Population"
+
+  - name: population_by_race_by_town
+    resource_id: 330be010-cce6-4580-a000-e870b30193fa
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Population by Race/Ethnicity by Town — ACS 5-year"
+    # No gender column — race IS the breakdown dimension
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Population"
+
+  - name: population_projections_by_town
+    resource_id: a2a4f56d-46d6-4920-9747-db6d1c965b31
+    source: ctdata_ckan
+    domain: demographics
+    frequency: periodic
+    description: "Population Projections by Town — 2015–2040"
+    total_filters:
+      Gender: "All"
+    measure_filter: "Number"
+    canonical_variable: "Projected Population"
+
+  - name: veteran_status_by_town
+    resource_id: 5c44bf16-4c9e-4a7a-be50-02af87cbf695
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Veteran Status by Town — ACS 5-year"
+    total_filters:
+      Gender: "Total"
+    measure_filter: "Percent"
+    canonical_variable: "Veteran Status"
+
+  - name: english_proficiency_by_town
+    resource_id: b8269cd0-d9fa-4951-863c-9d9679659e93
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "English Proficiency by Town — ACS 5-year"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "English Proficiency"
+
+  # ── ECONOMY & INCOME ─────────────────────────────────────────────────────────
+
+  - name: median_household_income_by_town
+    resource_id: e49c2914-929d-4d9a-923a-fdc81eeb8426
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Median Household Income by Town — ACS 5-year"
+    total_filters:
+      Race/Ethnicity: "All"
+    measure_filter: "Number"
+    canonical_variable: "Median Household Income"
+
+  - name: per_capita_income_by_town
+    resource_id: d471519c-cc62-40f1-8e7e-defc4de16ef3
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Per Capita Income by Town — ACS 5-year"
+    total_filters:
+      Race/Ethnicity: "All"
+    measure_filter: "Number"
+    canonical_variable: "Per Capita Income"
+
+  - name: poverty_status_by_town
+    resource_id: 292a5906-efcd-4e58-bbe6-a230881f8230
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Poverty Status by Town — ACS 5-year"
+    total_filters:
+      Race/Ethnicity: "All"
+    measure_filter: "Percent"
+    canonical_variable: "Poverty Status"
+
+  - name: gini_ratio_by_town
+    resource_id: ce4c03a3-4530-4dcb-a334-44a83c2d27a9
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Gini Ratio (income inequality) by Town — ACS 5-year"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Gini Ratio"
+
+  - name: snap_recipients_by_town
+    resource_id: 9ea229c5-00ff-4a30-b347-3ede34729d5e
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "SNAP Recipients by Town"
+    total_filters:
+      Race/Ethnicity: "All"
+    measure_filter: "Percent"
+    canonical_variable: "SNAP Recipients"
+
+  - name: employment_by_industry
+    resource_id: 56312bc5-a8b2-4a4a-aa48-3b49985970e8
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Employment by Industry by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Annual Average Employment"
+
+  - name: commuting_by_town
+    resource_id: 71165ac6-c08d-4bc2-aae0-b29a87c76ed2
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Commuting and Residence by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Commuters"
+
+  - name: self_employment_by_town
+    resource_id: e93f52e9-2431-4a60-8190-9581c5a5ed1f
+    source: ctdata_ckan
+    domain: business
+    frequency: annual
+    description: "Self-Employment by Business Type by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Employment"
+
+  - name: disengaged_youth_by_town
+    resource_id: 4b03679a-9baf-485d-827e-652cfa9b97cc
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Disengaged Youth (not employed or enrolled) by Town"
+    total_filters:
+      Gender: "Total"
+    measure_filter: "Percent"
+    canonical_variable: "Disengaged Youth"
+
+  - name: annual_avg_employment_wages
+    resource_id: c39b514b-b96c-4787-a230-9c1435f466cf
+    source: ctdata_ckan
+    domain: economy
+    frequency: annual
+    description: "Annual Average Employment and Wages by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Annual Average Employment"
+
+  # ── EDUCATION ────────────────────────────────────────────────────────────────
+
+  - name: educational_attainment_by_town
+    resource_id: cebd5268-01dd-494b-b060-54a4a640828c
+    source: ctdata_ckan
+    domain: education
+    frequency: annual
+    description: "Educational Attainment by Town — ACS 5-year"
+    total_filters:
+      Gender: "Total"
+    measure_filter: "Percent"
+    canonical_variable: "Educational Attainment"
+
+  - name: chronic_absenteeism_all_students
+    resource_id: 97b122d2-77b2-41ce-86a4-50dbdcc41f94
+    source: ctdata_ckan
+    domain: education
+    frequency: annual
+    description: "Chronic Absenteeism by All Students"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Chronically Absent Students"
+
+  - name: graduation_rates_by_town
+    resource_id: b92e7a91-f1ac-40a7-9d74-fa3b50dfab66
+    source: ctdata_ckan
+    domain: education
+    frequency: annual
+    description: "Four Year Cohort Graduation Rates by Race/Ethnicity"
+    # Race/Ethnicity breakdown — filter to All Students in feature_builder
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Four Year Graduation Rate"
+
+  - name: public_vs_private_enrollment
+    resource_id: 8dccfb5e-926b-4731-9323-32a1df88c484
+    source: ctdata_ckan
+    domain: education
+    frequency: annual
+    description: "Public vs Private School Enrollment by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Enrolled Students"
+
+  # ── HOUSING ──────────────────────────────────────────────────────────────────
+
+  - name: median_home_value_by_town
+    resource_id: 67d6e038-8812-463a-af36-49dea7c581ad
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Median Home Value by Town — ACS 5-year"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Median Home Value"
+
+  - name: median_rent_by_town
+    resource_id: 38f92f0f-096e-4a3e-a64c-9ba147c8c53f
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Median Rent by Town — ACS 5-year"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Median Rent"
+
+  - name: housing_tenure_by_town
+    resource_id: 451aa37f-b9f9-4cac-807e-5bcd25dd7db5
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Housing Tenure (owner vs renter) by Town"
+    total_filters:
+      Race/Ethnicity: "All"
+    measure_filter: "Number"
+    canonical_variable: "Occupied Housing Units"
+
+  - name: total_housing_units_by_town
+    resource_id: a2102a29-36b3-4ed4-8621-503932212aba
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Total Housing Units by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Housing Units"
+
+  - name: total_households_by_town
+    resource_id: 3d248511-3a97-4a6f-9058-6724d20c62c8
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Total Households by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Total Households"
+
+  - name: housing_units_built_before_1950
+    resource_id: 92539242-2047-43d5-b52c-f65e2d49a64f
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Housing Units Built Before 1950 by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Housing Units Built Before 1950"
+
+  - name: subsidized_housing_by_town
+    resource_id: 4ddc67c5-44f5-4d94-bd27-b1ff371ff6ff
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Subsidized Housing by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Total Assisted Units"
+
+  - name: housing_permits_by_town
+    resource_id: fbc72460-4307-44e9-9147-72c8abae7708
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Annual Housing Permits by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Housing Permits"
+
+  - name: single_housing_units_by_town
+    resource_id: cb5ffce1-224f-4d46-8b5c-5f1bda6dd5ee
+    source: ctdata_ckan
+    domain: housing
+    frequency: annual
+    description: "Single Family Housing Units by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Housing Units"
+
+  # ── HEALTH ───────────────────────────────────────────────────────────────────
+
+  - name: health_insurance_by_town
+    resource_id: 36775d31-4620-427a-a6c2-7ea08d8689b2
+    source: ctdata_ckan
+    domain: health
+    frequency: annual
+    description: "Health Insurance Coverage by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Health Insurance"
+
+  # ── FAMILY & SOCIAL ───────────────────────────────────────────────────────────
+
+  - name: single_parent_families_by_town
+    resource_id: 763f5831-932e-4e87-8e27-a70885fb75cc
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Single Parent Families by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Single-Parent Families"
+
+  - name: households_with_children_by_town
+    resource_id: 6d089afe-0752-4313-9105-c4a6f201dc87
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Households With Children by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Households"
+
+  - name: residential_mobility_by_town
+    resource_id: fb087080-fd7f-4082-8e65-a67c54ee177d
+    source: ctdata_ckan
+    domain: demographics
+    frequency: annual
+    description: "Residential Mobility by Race and Ethnicity by Town"
+    total_filters: {}
+    measure_filter: "Percent"
+    canonical_variable: "Residential Mobility"
+
+  # ── BUSINESS ─────────────────────────────────────────────────────────────────
+
+  - name: business_formations_by_town
+    resource_id: e20f015e-79b4-4f4e-8af1-4049eb1a8506
+    source: ctdata_ckan
+    domain: business
+    frequency: annual
+    description: "Business Formations by Town"
+    total_filters: {}
+    measure_filter: "Number"
+    canonical_variable: "Business Formations"
+
+  # ── Socrata: Business Registry (data.ct.gov) ─────────────────────────────────
+
+  - name: business_master
+    id: n7gp-d28j
+    source: socrata
+    domain: business
+    frequency: monthly
+    description: "CT SOTS Business Registry Master"
+    fields:
+      BusinessCity: town
+      Date_Registration: filing_date
+      BusinessType: business_type
+      Status: status
+      NAICS_Code: naics_code
+      NAICS_Description: naics_description
+
+  - name: business_filing_history
+    id: ah3s-bes7
+    source: socrata
+    domain: business
+    frequency: monthly
+    description: "CT SOTS Business Filing History"
+    fields:
+      BusinessCity: town
+      TransactionDate: filing_date
+      TransactionType: transaction_type
+      BusinessType: business_type
+
+# ── Metadata ──────────────────────────────────────────────────────────────────
+meta:
+  ctdata_base_url: http://data.ctdata.org
+  socrata_domain: data.ct.gov
+  ct_town_count: 169
+  output_dir: data/processed
+  acs_base_url: https://api.census.gov/data
+  default_acs_vintage: 2022
+  acs_geo: "county subdivision:*"
+  acs_state: "09"

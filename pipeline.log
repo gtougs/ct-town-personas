@@ -1,0 +1,346 @@
+2026-05-07 17:15:02,647 | INFO | run_all | ============================================================
+2026-05-07 17:15:02,647 | INFO | run_all | CT Town Personas Pipeline — 2022
+2026-05-07 17:15:02,647 | INFO | run_all | ============================================================
+2026-05-07 17:15:02,647 | INFO | run_all | 
+[1/4] Ingesting from data.ctdata.org ...
+2026-05-07 17:15:02,656 | INFO | ingestion.ctdata_client | Fetching 'median_age_by_town' (9c57dea5-ec15-4efa-afb9-3987309c1680) ...
+2026-05-07 17:15:02,873 | INFO | ingestion.ctdata_client |   -> 739 rows | cols: ['town', 'FIPS', 'Gender', 'Race/Ethnicity', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:02,874 | INFO | run_all |   Using vintage 2020 for 'median_age_by_town' (requested 2022)
+2026-05-07 17:15:02,884 | INFO | run_all |   ✓ median_age_by_town: 1 towns, 4 cols
+2026-05-07 17:15:02,884 | INFO | ingestion.ctdata_client | Fetching 'population_by_age_by_town' (12e2787a-cf25-487e-adab-b8d54cde0ca3) ...
+2026-05-07 17:15:03,163 | INFO | ingestion.ctdata_client |   -> 2,316 rows | cols: ['town', 'FIPS', 'Gender', 'Race/Ethnicity', 'Age Cohort', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:03,164 | INFO | run_all |   Using vintage 2010 for 'population_by_age_by_town' (requested 2022)
+2026-05-07 17:15:03,170 | INFO | run_all |   ✓ population_by_age_by_town: 1 towns, 4 cols
+2026-05-07 17:15:03,170 | INFO | ingestion.ctdata_client | Fetching 'population_by_race_by_town' (330be010-cce6-4580-a000-e870b30193fa) ...
+2026-05-07 17:15:03,345 | INFO | ingestion.ctdata_client |   -> 5,365 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:03,346 | INFO | run_all |   Using vintage 2020 for 'population_by_race_by_town' (requested 2022)
+2026-05-07 17:15:03,351 | INFO | run_all |   ✓ population_by_race_by_town: 15 towns, 4 cols
+2026-05-07 17:15:03,351 | INFO | ingestion.ctdata_client | Fetching 'population_projections_by_town' (a2a4f56d-46d6-4920-9747-db6d1c965b31) ...
+2026-05-07 17:15:03,783 | INFO | ingestion.ctdata_client |   -> 27,035 rows | cols: ['town', 'FIPS', 'Gender', 'Age Cohort', 'Variable', 'Measure Type', 'Value', 'year']
+2026-05-07 17:15:03,784 | INFO | run_all |   Using vintage 2020 for 'population_projections_by_town' (requested 2022)
+2026-05-07 17:15:03,787 | INFO | run_all |   ✓ population_projections_by_town: 40 towns, 3 cols
+2026-05-07 17:15:03,787 | INFO | ingestion.ctdata_client | Fetching 'veteran_status_by_town' (5c44bf16-4c9e-4a7a-be50-02af87cbf695) ...
+2026-05-07 17:15:04,145 | INFO | ingestion.ctdata_client |   -> 30,575 rows | cols: ['town', 'FIPS', 'Age', 'Veteran Status', 'Gender', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:04,146 | INFO | run_all |   Using vintage 2019 for 'veteran_status_by_town' (requested 2022)
+2026-05-07 17:15:04,149 | INFO | run_all |   ✓ veteran_status_by_town: 14 towns, 4 cols
+2026-05-07 17:15:04,149 | INFO | ingestion.ctdata_client | Fetching 'english_proficiency_by_town' (b8269cd0-d9fa-4951-863c-9d9679659e93) ...
+2026-05-07 17:15:04,533 | INFO | ingestion.ctdata_client |   -> 33,666 rows | cols: ['town', 'FIPS', 'English Proficiency', 'Age', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:04,533 | INFO | run_all |   Using vintage 2020 for 'english_proficiency_by_town' (requested 2022)
+2026-05-07 17:15:04,536 | INFO | run_all |   ✓ english_proficiency_by_town: 38 towns, 4 cols
+2026-05-07 17:15:04,536 | INFO | ingestion.ctdata_client | Fetching 'median_household_income_by_town' (e49c2914-929d-4d9a-923a-fdc81eeb8426) ...
+2026-05-07 17:15:04,937 | INFO | ingestion.ctdata_client |   -> 30,576 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:04,938 | INFO | run_all |   Using vintage 2020 for 'median_household_income_by_town' (requested 2022)
+2026-05-07 17:15:04,941 | INFO | run_all |   ✓ median_household_income_by_town: 63 towns, 4 cols
+2026-05-07 17:15:04,941 | INFO | ingestion.ctdata_client | Fetching 'per_capita_income_by_town' (d471519c-cc62-40f1-8e7e-defc4de16ef3) ...
+2026-05-07 17:15:05,384 | INFO | ingestion.ctdata_client |   -> 34,418 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:05,384 | INFO | run_all |   Using vintage 2020 for 'per_capita_income_by_town' (requested 2022)
+2026-05-07 17:15:05,387 | INFO | run_all |   ✓ per_capita_income_by_town: 143 towns, 4 cols
+2026-05-07 17:15:05,387 | INFO | ingestion.ctdata_client | Fetching 'poverty_status_by_town' (292a5906-efcd-4e58-bbe6-a230881f8230) ...
+2026-05-07 17:15:05,730 | INFO | ingestion.ctdata_client |   -> 26,075 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Age', 'Poverty Status', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:05,730 | INFO | run_all |   Using vintage 2020 for 'poverty_status_by_town' (requested 2022)
+2026-05-07 17:15:05,733 | INFO | run_all |   ✓ poverty_status_by_town: 15 towns, 4 cols
+2026-05-07 17:15:05,733 | INFO | ingestion.ctdata_client | Fetching 'gini_ratio_by_town' (ce4c03a3-4530-4dcb-a334-44a83c2d27a9) ...
+2026-05-07 17:15:05,918 | INFO | ingestion.ctdata_client |   -> 3,400 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:05,919 | INFO | run_all |   Using vintage 2019 for 'gini_ratio_by_town' (requested 2022)
+2026-05-07 17:15:05,924 | INFO | run_all |   ✓ gini_ratio_by_town: 170 towns, 4 cols
+2026-05-07 17:15:05,924 | INFO | ingestion.ctdata_client | Fetching 'snap_recipients_by_town' (9ea229c5-00ff-4a30-b347-3ede34729d5e) ...
+2026-05-07 17:15:06,366 | INFO | ingestion.ctdata_client |   -> 36,386 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:06,366 | INFO | run_all |   Using vintage 2018 for 'snap_recipients_by_town' (requested 2022)
+2026-05-07 17:15:06,369 | INFO | run_all |   ✓ snap_recipients_by_town: 101 towns, 4 cols
+2026-05-07 17:15:06,369 | INFO | ingestion.ctdata_client | Fetching 'employment_by_industry' (56312bc5-a8b2-4a4a-aa48-3b49985970e8) ...
+2026-05-07 17:15:06,650 | INFO | ingestion.ctdata_client |   -> 21,360 rows | cols: ['town', 'FIPS', 'NAICS Code', 'Industry Name', 'Rank', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:06,650 | INFO | run_all |   Using vintage 2018 for 'employment_by_industry' (requested 2022)
+2026-05-07 17:15:06,653 | INFO | run_all |   ✓ employment_by_industry: 178 towns, 4 cols
+2026-05-07 17:15:06,653 | INFO | ingestion.ctdata_client | Fetching 'commuting_by_town' (71165ac6-c08d-4bc2-aae0-b29a87c76ed2) ...
+2026-05-07 17:15:07,111 | INFO | ingestion.ctdata_client |   -> 41,852 rows | cols: ['Residence', 'Residence State', 'Residence FIPS', 'Workplace', 'Workplace State', 'Workplace FIPS', 'Variable', 'Measure Type', 'Value', 'year']
+2026-05-07 17:15:07,112 | WARNING | run_all |   Skipping 'commuting_by_town' — no 'town' column after standardize
+2026-05-07 17:15:07,112 | INFO | ingestion.ctdata_client | Fetching 'self_employment_by_town' (e93f52e9-2431-4a60-8190-9581c5a5ed1f) ...
+2026-05-07 17:15:07,438 | INFO | ingestion.ctdata_client |   -> 20,400 rows | cols: ['town', 'FIPS', 'Business Type', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:07,439 | INFO | run_all |   Using vintage 2019 for 'self_employment_by_town' (requested 2022)
+2026-05-07 17:15:07,442 | INFO | run_all |   ✓ self_employment_by_town: 170 towns, 4 cols
+2026-05-07 17:15:07,442 | INFO | ingestion.ctdata_client | Fetching 'disengaged_youth_by_town' (4b03679a-9baf-485d-827e-652cfa9b97cc) ...
+2026-05-07 17:15:07,815 | INFO | ingestion.ctdata_client |   -> 40,286 rows | cols: ['town', 'FIPS', 'Gender', 'Engagement', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:07,815 | INFO | run_all |   Using vintage 2020 for 'disengaged_youth_by_town' (requested 2022)
+2026-05-07 17:15:07,818 | INFO | run_all |   ✓ disengaged_youth_by_town: 122 towns, 4 cols
+2026-05-07 17:15:07,818 | INFO | ingestion.ctdata_client | Fetching 'annual_avg_employment_wages' (c39b514b-b96c-4787-a230-9c1435f466cf) ...
+2026-05-07 17:15:08,047 | INFO | ingestion.ctdata_client |   -> 18,156 rows | cols: ['town', 'FIPS', 'Category', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:08,048 | INFO | run_all |   Using vintage 2020 for 'annual_avg_employment_wages' (requested 2022)
+2026-05-07 17:15:08,051 | INFO | run_all |   ✓ annual_avg_employment_wages: 178 towns, 4 cols
+2026-05-07 17:15:08,051 | INFO | ingestion.ctdata_client | Fetching 'educational_attainment_by_town' (cebd5268-01dd-494b-b060-54a4a640828c) ...
+2026-05-07 17:15:08,491 | INFO | ingestion.ctdata_client |   -> 34,915 rows | cols: ['town', 'FIPS', 'Gender', 'Educational Attainment', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:08,492 | INFO | run_all |   Using vintage 2020 for 'educational_attainment_by_town' (requested 2022)
+2026-05-07 17:15:08,495 | INFO | run_all |   ✓ educational_attainment_by_town: 44 towns, 4 cols
+2026-05-07 17:15:08,495 | INFO | ingestion.ctdata_client | Fetching 'chronic_absenteeism_all_students' (97b122d2-77b2-41ce-86a4-50dbdcc41f94) ...
+2026-05-07 17:15:08,612 | INFO | ingestion.ctdata_client |   -> 1,845 rows | cols: ['District', 'FIPS', 'Variable', 'Measure Type', 'Value', 'year']
+2026-05-07 17:15:08,612 | WARNING | run_all |   Skipping 'chronic_absenteeism_all_students' — no 'town' column after standardize
+2026-05-07 17:15:08,612 | INFO | ingestion.ctdata_client | Fetching 'graduation_rates_by_town' (b92e7a91-f1ac-40a7-9d74-fa3b50dfab66) ...
+2026-05-07 17:15:09,031 | INFO | ingestion.ctdata_client |   -> 35,403 rows | cols: ['District', 'FIPS', 'Race/Ethnicity', 'Variable', 'Measure Type', 'Value', 'year']
+2026-05-07 17:15:09,031 | WARNING | run_all |   Skipping 'graduation_rates_by_town' — no 'town' column after standardize
+2026-05-07 17:15:09,031 | INFO | ingestion.ctdata_client | Fetching 'public_vs_private_enrollment' (8dccfb5e-926b-4731-9323-32a1df88c484) ...
+2026-05-07 17:15:09,431 | INFO | ingestion.ctdata_client |   -> 42,129 rows | cols: ['town', 'FIPS', 'Grade', 'School Type', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:09,434 | INFO | run_all |   Using vintage 2019 for 'public_vs_private_enrollment' (requested 2022)
+2026-05-07 17:15:09,437 | INFO | run_all |   ✓ public_vs_private_enrollment: 58 towns, 4 cols
+2026-05-07 17:15:09,437 | INFO | ingestion.ctdata_client | Fetching 'median_home_value_by_town' (67d6e038-8812-463a-af36-49dea7c581ad) ...
+2026-05-07 17:15:09,567 | INFO | ingestion.ctdata_client |   -> 7,480 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:09,568 | INFO | run_all |   Using vintage 2020 for 'median_home_value_by_town' (requested 2022)
+2026-05-07 17:15:09,571 | INFO | run_all |   ✓ median_home_value_by_town: 170 towns, 4 cols
+2026-05-07 17:15:09,571 | INFO | ingestion.ctdata_client | Fetching 'median_rent_by_town' (38f92f0f-096e-4a3e-a64c-9ba147c8c53f) ...
+2026-05-07 17:15:09,714 | INFO | ingestion.ctdata_client |   -> 6,800 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:09,715 | INFO | run_all |   Using vintage 2019 for 'median_rent_by_town' (requested 2022)
+2026-05-07 17:15:09,719 | INFO | run_all |   ✓ median_rent_by_town: 170 towns, 4 cols
+2026-05-07 17:15:09,719 | INFO | ingestion.ctdata_client | Fetching 'housing_tenure_by_town' (451aa37f-b9f9-4cac-807e-5bcd25dd7db5) ...
+2026-05-07 17:15:10,145 | INFO | ingestion.ctdata_client |   -> 30,210 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Tenure', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:10,146 | INFO | run_all |   Using vintage 2018 for 'housing_tenure_by_town' (requested 2022)
+2026-05-07 17:15:10,149 | INFO | run_all |   ✓ housing_tenure_by_town: 21 towns, 4 cols
+2026-05-07 17:15:10,149 | INFO | ingestion.ctdata_client | Fetching 'total_housing_units_by_town' (a2102a29-36b3-4ed4-8621-503932212aba) ...
+2026-05-07 17:15:10,345 | INFO | ingestion.ctdata_client |   -> 17,000 rows | cols: ['town', 'FIPS', 'Occupancy Status', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:10,346 | INFO | run_all |   Using vintage 2019 for 'total_housing_units_by_town' (requested 2022)
+2026-05-07 17:15:10,349 | INFO | run_all |   ✓ total_housing_units_by_town: 170 towns, 4 cols
+2026-05-07 17:15:10,349 | INFO | ingestion.ctdata_client | Fetching 'total_households_by_town' (3d248511-3a97-4a6f-9058-6724d20c62c8) ...
+2026-05-07 17:15:10,540 | INFO | ingestion.ctdata_client |   -> 3,400 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:10,540 | INFO | run_all |   Using vintage 2019 for 'total_households_by_town' (requested 2022)
+2026-05-07 17:15:10,545 | INFO | run_all |   ✓ total_households_by_town: 170 towns, 4 cols
+2026-05-07 17:15:10,545 | INFO | ingestion.ctdata_client | Fetching 'housing_units_built_before_1950' (92539242-2047-43d5-b52c-f65e2d49a64f) ...
+2026-05-07 17:15:10,680 | INFO | ingestion.ctdata_client |   -> 3,204 rows | cols: ['town', 'FIPS', 'Town Profile Year', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:10,680 | INFO | run_all |   Using vintage 2018 for 'housing_units_built_before_1950' (requested 2022)
+2026-05-07 17:15:10,686 | INFO | run_all |   ✓ housing_units_built_before_1950: 178 towns, 3 cols
+2026-05-07 17:15:10,686 | INFO | ingestion.ctdata_client | Fetching 'subsidized_housing_by_town' (4ddc67c5-44f5-4d94-bd27-b1ff371ff6ff) ...
+2026-05-07 17:15:10,816 | INFO | ingestion.ctdata_client |   -> 3,026 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:10,816 | INFO | run_all |   Using vintage 2018 for 'subsidized_housing_by_town' (requested 2022)
+2026-05-07 17:15:10,821 | INFO | run_all |   ✓ subsidized_housing_by_town: 178 towns, 3 cols
+2026-05-07 17:15:10,821 | INFO | ingestion.ctdata_client | Fetching 'housing_permits_by_town' (fbc72460-4307-44e9-9147-72c8abae7708) ...
+2026-05-07 17:15:11,014 | INFO | ingestion.ctdata_client |   -> 9,492 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:11,015 | INFO | run_all |   Using vintage 2017 for 'housing_permits_by_town' (requested 2022)
+2026-05-07 17:15:11,018 | INFO | run_all |   ✓ housing_permits_by_town: 170 towns, 3 cols
+2026-05-07 17:15:11,018 | INFO | ingestion.ctdata_client | Fetching 'single_housing_units_by_town' (cb5ffce1-224f-4d46-8b5c-5f1bda6dd5ee) ...
+2026-05-07 17:15:11,202 | INFO | ingestion.ctdata_client |   -> 10,680 rows | cols: ['town', 'FIPS', 'Unit Type', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:11,202 | INFO | run_all |   Using vintage 2019 for 'single_housing_units_by_town' (requested 2022)
+2026-05-07 17:15:11,206 | INFO | run_all |   ✓ single_housing_units_by_town: 178 towns, 4 cols
+2026-05-07 17:15:11,206 | INFO | ingestion.ctdata_client | Fetching 'health_insurance_by_town' (36775d31-4620-427a-a6c2-7ea08d8689b2) ...
+2026-05-07 17:15:11,643 | INFO | ingestion.ctdata_client |   -> 36,314 rows | cols: ['town', 'FIPS', 'Age Range', 'Insurance Status', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:11,644 | INFO | run_all |   Using vintage 2019 for 'health_insurance_by_town' (requested 2022)
+2026-05-07 17:15:11,646 | INFO | run_all |   ✓ health_insurance_by_town: 94 towns, 4 cols
+2026-05-07 17:15:11,646 | INFO | ingestion.ctdata_client | Fetching 'single_parent_families_by_town' (763f5831-932e-4e87-8e27-a70885fb75cc) ...
+2026-05-07 17:15:11,989 | INFO | ingestion.ctdata_client |   -> 33,660 rows | cols: ['town', 'FIPS', 'Family Type', 'Child Relation', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:11,989 | INFO | run_all |   Using vintage 2020 for 'single_parent_families_by_town' (requested 2022)
+2026-05-07 17:15:11,992 | INFO | run_all |   ✓ single_parent_families_by_town: 170 towns, 4 cols
+2026-05-07 17:15:11,992 | INFO | ingestion.ctdata_client | Fetching 'households_with_children_by_town' (6d089afe-0752-4313-9105-c4a6f201dc87) ...
+2026-05-07 17:15:12,369 | INFO | ingestion.ctdata_client |   -> 29,298 rows | cols: ['town', 'FIPS', 'Household Type', 'Housing Tenure Type', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:12,370 | INFO | run_all |   Using vintage 2019 for 'households_with_children_by_town' (requested 2022)
+2026-05-07 17:15:12,373 | INFO | run_all |   ✓ households_with_children_by_town: 40 towns, 4 cols
+2026-05-07 17:15:12,373 | INFO | ingestion.ctdata_client | Fetching 'residential_mobility_by_town' (fb087080-fd7f-4082-8e65-a67c54ee177d) ...
+2026-05-07 17:15:12,803 | INFO | ingestion.ctdata_client |   -> 31,500 rows | cols: ['town', 'FIPS', 'Race/Ethnicity', 'Mobility', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:12,803 | INFO | run_all |   Using vintage 2019 for 'residential_mobility_by_town' (requested 2022)
+2026-05-07 17:15:12,806 | INFO | run_all |   ✓ residential_mobility_by_town: 19 towns, 4 cols
+2026-05-07 17:15:12,806 | INFO | ingestion.ctdata_client | Fetching 'business_formations_by_town' (e20f015e-79b4-4f4e-8af1-4049eb1a8506) ...
+2026-05-07 17:15:12,915 | INFO | ingestion.ctdata_client |   -> 170 rows | cols: ['town', 'FIPS', 'Measure Type', 'Variable', 'Value', 'year']
+2026-05-07 17:15:12,915 | INFO | run_all |   Using vintage 2017 for 'business_formations_by_town' (requested 2022)
+2026-05-07 17:15:12,919 | INFO | run_all |   ✓ business_formations_by_town: 170 towns, 3 cols
+2026-05-07 17:15:12,919 | INFO | run_all | 
+  Merging 31 datasets ...
+2026-05-07 17:15:12,954 | INFO | run_all |   Merged: (705, 32)
+2026-05-07 17:15:12,954 | INFO | run_all | 
+  Ingesting business data from data.ct.gov ...
+2026-05-07 17:15:12,964 | INFO | ingestion.socrata_client | Fetching 'business_master' (n7gp-d28j) from data.ct.gov ...
+2026-05-07 17:15:49,171 | INFO | ingestion.socrata_client |   → 303,556 rows, ['business_type', 'status', 'naics_code']
+2026-05-07 17:15:49,239 | INFO | ingestion.socrata_client | Fetching 'business_filing_history' (ah3s-bes7) from data.ct.gov ...
+2026-05-07 17:35:01,142 | WARNING | run_all |   Business data failed (("Connection broken: ConnectionResetError(54, 'Connection reset by peer')", ConnectionResetError(54, 'Connection reset by peer'))) — continuing without it
+2026-05-07 17:35:01,142 | INFO | run_all | 
+[2/4] Building feature matrix ...
+2026-05-07 17:35:01,143 | INFO | pipeline.feature_builder | Building feature matrix ...
+2026-05-07 17:35:01,143 | INFO | pipeline.feature_builder |   Columns: ['town', 'year', 'margins_of_error', 'median_age', 'population', 'projected_population', 'veteran_status', 'english_proficiency', 'median_household_income', 'per_capita_income', 'poverty_status', 'gini_ratio', 'snap_recipients', 'annual_average_employment', 'number_of_employers', 'employment', 'disengaged_youth', 'educational_attainment', 'enrolled_students', 'median_home_value', 'median_rent', 'occupied_housing_units', 'housing_units', 'total_households', 'housing_units_built_before_1950', 'total_assisted_units', 'housing_permits', 'health_insurance', 'single_parent_families', 'households', 'residential_mobility', 'business_formations']
+2026-05-07 17:35:01,269 | INFO | pipeline.feature_builder |   Saved → /Users/garretttougas/Downloads/ct-town-personas/data/processed/town_features_2022.parquet (705 rows × 32 cols)
+2026-05-07 17:35:01,269 | INFO | run_all |   Features: (705, 32)
+2026-05-07 17:35:01,273 | INFO | run_all | 
+[3/4] Clustering towns (k=5) ...
+2026-05-07 17:35:01,273 | INFO | pipeline.cluster | Fitting cluster models (k=5) ...
+2026-05-07 17:35:01,273 | WARNING | pipeline.cluster |   Missing features (will be skipped): {'business_formation_rate', 'pct_hispanic', 'pct_hs_or_higher', 'affordability_ratio', 'pct_insured', 'total_population', 'pct_graduate_degree', 'pct_black', 'pct_asian', 'pct_bachelors_or_higher', 'pct_no_vehicle', 'pct_foreign_born', 'unemployment_rate', 'vacancy_rate', 'pct_owner_occupied', 'pct_white', 'business_survival_score', 'pct_in_migration', 'pct_wfh', 'pct_same_house', 'businesses_per_1k', 'median_gross_rent'}
+2026-05-07 17:35:01,318 | INFO | pipeline.cluster |   KMeans silhouette score: 0.822
+2026-05-07 17:35:01,345 | INFO | pipeline.cluster |   PCA 2D explains 92.7% of variance
+2026-05-07 17:35:01,350 | INFO | pipeline.cluster |   Cluster assignments saved → /Users/garretttougas/Downloads/ct-town-personas/data/processed/town_clusters.parquet
+2026-05-07 17:35:01,355 | INFO | pipeline.cluster |   Centroids saved → /Users/garretttougas/Downloads/ct-town-personas/data/processed/cluster_centroids.parquet
+2026-05-07 17:35:01,357 | INFO | run_all |   Archetypes: 5
+2026-05-07 17:35:01,357 | INFO | run_all | 
+[4/4] Building persona cards ...
+2026-05-07 17:35:01,358 | INFO | pipeline.persona |   Built personas for Andover
+2026-05-07 17:35:01,359 | INFO | pipeline.persona |   Built personas for Ansonia
+2026-05-07 17:35:01,359 | INFO | pipeline.persona |   Built personas for Ashford
+2026-05-07 17:35:01,360 | INFO | pipeline.persona |   Built personas for Avon
+2026-05-07 17:35:01,361 | INFO | pipeline.persona |   Built personas for Barkhamsted
+2026-05-07 17:35:01,361 | INFO | pipeline.persona |   Built personas for Beacon Falls
+2026-05-07 17:35:01,362 | INFO | pipeline.persona |   Built personas for Berlin
+2026-05-07 17:35:01,363 | INFO | pipeline.persona |   Built personas for Bethany
+2026-05-07 17:35:01,364 | INFO | pipeline.persona |   Built personas for Bethel
+2026-05-07 17:35:01,365 | INFO | pipeline.persona |   Built personas for Bethlehem
+2026-05-07 17:35:01,365 | INFO | pipeline.persona |   Built personas for Bloomfield
+2026-05-07 17:35:01,366 | INFO | pipeline.persona |   Built personas for Bolton
+2026-05-07 17:35:01,367 | INFO | pipeline.persona |   Built personas for Bozrah
+2026-05-07 17:35:01,367 | INFO | pipeline.persona |   Built personas for Branford
+2026-05-07 17:35:01,368 | INFO | pipeline.persona |   Built personas for Bridgeport
+2026-05-07 17:35:01,369 | INFO | pipeline.persona |   Built personas for Bridgewater
+2026-05-07 17:35:01,369 | INFO | pipeline.persona |   Built personas for Bristol
+2026-05-07 17:35:01,370 | INFO | pipeline.persona |   Built personas for Brookfield
+2026-05-07 17:35:01,371 | INFO | pipeline.persona |   Built personas for Brooklyn
+2026-05-07 17:35:01,371 | INFO | pipeline.persona |   Built personas for Burlington
+2026-05-07 17:35:01,372 | INFO | pipeline.persona |   Built personas for Canaan
+2026-05-07 17:35:01,373 | INFO | pipeline.persona |   Built personas for Canterbury
+2026-05-07 17:35:01,373 | INFO | pipeline.persona |   Built personas for Canton
+2026-05-07 17:35:01,374 | INFO | pipeline.persona |   Built personas for Chaplin
+2026-05-07 17:35:01,375 | INFO | pipeline.persona |   Built personas for Cheshire
+2026-05-07 17:35:01,375 | INFO | pipeline.persona |   Built personas for Chester
+2026-05-07 17:35:01,376 | INFO | pipeline.persona |   Built personas for Clinton
+2026-05-07 17:35:01,377 | INFO | pipeline.persona |   Built personas for Colchester
+2026-05-07 17:35:01,378 | INFO | pipeline.persona |   Built personas for Colebrook
+2026-05-07 17:35:01,378 | INFO | pipeline.persona |   Built personas for Columbia
+2026-05-07 17:35:01,381 | INFO | pipeline.persona |   Built personas for Connecticut
+2026-05-07 17:35:01,383 | INFO | pipeline.persona |   Built personas for Cornwall
+2026-05-07 17:35:01,384 | INFO | pipeline.persona |   Built personas for Coventry
+2026-05-07 17:35:01,385 | INFO | pipeline.persona |   Built personas for Cromwell
+2026-05-07 17:35:01,385 | INFO | pipeline.persona |   Built personas for Danbury
+2026-05-07 17:35:01,386 | INFO | pipeline.persona |   Built personas for Darien
+2026-05-07 17:35:01,387 | INFO | pipeline.persona |   Built personas for Deep River
+2026-05-07 17:35:01,388 | INFO | pipeline.persona |   Built personas for Derby
+2026-05-07 17:35:01,388 | INFO | pipeline.persona |   Built personas for Durham
+2026-05-07 17:35:01,389 | INFO | pipeline.persona |   Built personas for East Granby
+2026-05-07 17:35:01,390 | INFO | pipeline.persona |   Built personas for East Haddam
+2026-05-07 17:35:01,390 | INFO | pipeline.persona |   Built personas for East Hampton
+2026-05-07 17:35:01,391 | INFO | pipeline.persona |   Built personas for East Hartford
+2026-05-07 17:35:01,392 | INFO | pipeline.persona |   Built personas for East Haven
+2026-05-07 17:35:01,392 | INFO | pipeline.persona |   Built personas for East Lyme
+2026-05-07 17:35:01,393 | INFO | pipeline.persona |   Built personas for East Windsor
+2026-05-07 17:35:01,394 | INFO | pipeline.persona |   Built personas for Eastford
+2026-05-07 17:35:01,394 | INFO | pipeline.persona |   Built personas for Easton
+2026-05-07 17:35:01,395 | INFO | pipeline.persona |   Built personas for Ellington
+2026-05-07 17:35:01,396 | INFO | pipeline.persona |   Built personas for Enfield
+2026-05-07 17:35:01,396 | INFO | pipeline.persona |   Built personas for Essex
+2026-05-07 17:35:01,397 | INFO | pipeline.persona |   Built personas for Fairfield
+2026-05-07 17:35:01,398 | INFO | pipeline.persona |   Built personas for Fairfield County
+2026-05-07 17:35:01,398 | INFO | pipeline.persona |   Built personas for Farmington
+2026-05-07 17:35:01,399 | INFO | pipeline.persona |   Built personas for Franklin
+2026-05-07 17:35:01,400 | INFO | pipeline.persona |   Built personas for Glastonbury
+2026-05-07 17:35:01,401 | INFO | pipeline.persona |   Built personas for Goshen
+2026-05-07 17:35:01,403 | INFO | pipeline.persona |   Built personas for Granby
+2026-05-07 17:35:01,405 | INFO | pipeline.persona |   Built personas for Greenwich
+2026-05-07 17:35:01,407 | INFO | pipeline.persona |   Built personas for Griswold
+2026-05-07 17:35:01,409 | INFO | pipeline.persona |   Built personas for Groton
+2026-05-07 17:35:01,411 | INFO | pipeline.persona |   Built personas for Guilford
+2026-05-07 17:35:01,412 | INFO | pipeline.persona |   Built personas for Haddam
+2026-05-07 17:35:01,412 | INFO | pipeline.persona |   Built personas for Hamden
+2026-05-07 17:35:01,413 | INFO | pipeline.persona |   Built personas for Hampton
+2026-05-07 17:35:01,414 | INFO | pipeline.persona |   Built personas for Hartford
+2026-05-07 17:35:01,415 | INFO | pipeline.persona |   Built personas for Hartford County
+2026-05-07 17:35:01,415 | INFO | pipeline.persona |   Built personas for Hartland
+2026-05-07 17:35:01,416 | INFO | pipeline.persona |   Built personas for Harwinton
+2026-05-07 17:35:01,417 | INFO | pipeline.persona |   Built personas for Hebron
+2026-05-07 17:35:01,417 | INFO | pipeline.persona |   Built personas for Kent
+2026-05-07 17:35:01,418 | INFO | pipeline.persona |   Built personas for Killingly
+2026-05-07 17:35:01,419 | INFO | pipeline.persona |   Built personas for Killingworth
+2026-05-07 17:35:01,419 | INFO | pipeline.persona |   Built personas for Lebanon
+2026-05-07 17:35:01,420 | INFO | pipeline.persona |   Built personas for Ledyard
+2026-05-07 17:35:01,421 | INFO | pipeline.persona |   Built personas for Lisbon
+2026-05-07 17:35:01,421 | INFO | pipeline.persona |   Built personas for Litchfield
+2026-05-07 17:35:01,422 | INFO | pipeline.persona |   Built personas for Litchfield County
+2026-05-07 17:35:01,423 | INFO | pipeline.persona |   Built personas for Lyme
+2026-05-07 17:35:01,423 | INFO | pipeline.persona |   Built personas for Madison
+2026-05-07 17:35:01,424 | INFO | pipeline.persona |   Built personas for Manchester
+2026-05-07 17:35:01,425 | INFO | pipeline.persona |   Built personas for Mansfield
+2026-05-07 17:35:01,425 | INFO | pipeline.persona |   Built personas for Marlborough
+2026-05-07 17:35:01,426 | INFO | pipeline.persona |   Built personas for Meriden
+2026-05-07 17:35:01,427 | INFO | pipeline.persona |   Built personas for Middlebury
+2026-05-07 17:35:01,429 | INFO | pipeline.persona |   Built personas for Middlefield
+2026-05-07 17:35:01,431 | INFO | pipeline.persona |   Built personas for Middlesex County
+2026-05-07 17:35:01,432 | INFO | pipeline.persona |   Built personas for Middletown
+2026-05-07 17:35:01,432 | INFO | pipeline.persona |   Built personas for Milford
+2026-05-07 17:35:01,433 | INFO | pipeline.persona |   Built personas for Monroe
+2026-05-07 17:35:01,434 | INFO | pipeline.persona |   Built personas for Montville
+2026-05-07 17:35:01,435 | INFO | pipeline.persona |   Built personas for Morris
+2026-05-07 17:35:01,435 | INFO | pipeline.persona |   Built personas for Naugatuck
+2026-05-07 17:35:01,436 | INFO | pipeline.persona |   Built personas for New Britain
+2026-05-07 17:35:01,437 | INFO | pipeline.persona |   Built personas for New Canaan
+2026-05-07 17:35:01,437 | INFO | pipeline.persona |   Built personas for New Fairfield
+2026-05-07 17:35:01,438 | INFO | pipeline.persona |   Built personas for New Hartford
+2026-05-07 17:35:01,439 | INFO | pipeline.persona |   Built personas for New Haven
+2026-05-07 17:35:01,440 | INFO | pipeline.persona |   Built personas for New Haven County
+2026-05-07 17:35:01,440 | INFO | pipeline.persona |   Built personas for New London
+2026-05-07 17:35:01,441 | INFO | pipeline.persona |   Built personas for New London County
+2026-05-07 17:35:01,442 | INFO | pipeline.persona |   Built personas for New Milford
+2026-05-07 17:35:01,442 | INFO | pipeline.persona |   Built personas for Newington
+2026-05-07 17:35:01,443 | INFO | pipeline.persona |   Built personas for Newtown
+2026-05-07 17:35:01,444 | INFO | pipeline.persona |   Built personas for Norfolk
+2026-05-07 17:35:01,444 | INFO | pipeline.persona |   Built personas for North Branford
+2026-05-07 17:35:01,445 | INFO | pipeline.persona |   Built personas for North Canaan
+2026-05-07 17:35:01,446 | INFO | pipeline.persona |   Built personas for North Haven
+2026-05-07 17:35:01,446 | INFO | pipeline.persona |   Built personas for North Stonington
+2026-05-07 17:35:01,447 | INFO | pipeline.persona |   Built personas for Norwalk
+2026-05-07 17:35:01,448 | INFO | pipeline.persona |   Built personas for Norwich
+2026-05-07 17:35:01,448 | INFO | pipeline.persona |   Built personas for Old Lyme
+2026-05-07 17:35:01,449 | INFO | pipeline.persona |   Built personas for Old Saybrook
+2026-05-07 17:35:01,450 | INFO | pipeline.persona |   Built personas for Orange
+2026-05-07 17:35:01,450 | INFO | pipeline.persona |   Built personas for Oxford
+2026-05-07 17:35:01,451 | INFO | pipeline.persona |   Built personas for Plainfield
+2026-05-07 17:35:01,452 | INFO | pipeline.persona |   Built personas for Plainville
+2026-05-07 17:35:01,453 | INFO | pipeline.persona |   Built personas for Plymouth
+2026-05-07 17:35:01,453 | INFO | pipeline.persona |   Built personas for Pomfret
+2026-05-07 17:35:01,454 | INFO | pipeline.persona |   Built personas for Portland
+2026-05-07 17:35:01,455 | INFO | pipeline.persona |   Built personas for Preston
+2026-05-07 17:35:01,455 | INFO | pipeline.persona |   Built personas for Prospect
+2026-05-07 17:35:01,456 | INFO | pipeline.persona |   Built personas for Putnam
+2026-05-07 17:35:01,457 | INFO | pipeline.persona |   Built personas for Redding
+2026-05-07 17:35:01,457 | INFO | pipeline.persona |   Built personas for Ridgefield
+2026-05-07 17:35:01,458 | INFO | pipeline.persona |   Built personas for Rocky Hill
+2026-05-07 17:35:01,459 | INFO | pipeline.persona |   Built personas for Roxbury
+2026-05-07 17:35:01,460 | INFO | pipeline.persona |   Built personas for Salem
+2026-05-07 17:35:01,460 | INFO | pipeline.persona |   Built personas for Salisbury
+2026-05-07 17:35:01,461 | INFO | pipeline.persona |   Built personas for Scotland
+2026-05-07 17:35:01,462 | INFO | pipeline.persona |   Built personas for Seymour
+2026-05-07 17:35:01,462 | INFO | pipeline.persona |   Built personas for Sharon
+2026-05-07 17:35:01,463 | INFO | pipeline.persona |   Built personas for Shelton
+2026-05-07 17:35:01,464 | INFO | pipeline.persona |   Built personas for Sherman
+2026-05-07 17:35:01,464 | INFO | pipeline.persona |   Built personas for Simsbury
+2026-05-07 17:35:01,465 | INFO | pipeline.persona |   Built personas for Somers
+2026-05-07 17:35:01,466 | INFO | pipeline.persona |   Built personas for South Windsor
+2026-05-07 17:35:01,466 | INFO | pipeline.persona |   Built personas for Southbury
+2026-05-07 17:35:01,467 | INFO | pipeline.persona |   Built personas for Southington
+2026-05-07 17:35:01,468 | INFO | pipeline.persona |   Built personas for Sprague
+2026-05-07 17:35:01,469 | INFO | pipeline.persona |   Built personas for Stafford
+2026-05-07 17:35:01,469 | INFO | pipeline.persona |   Built personas for Stamford
+2026-05-07 17:35:01,470 | INFO | pipeline.persona |   Built personas for Sterling
+2026-05-07 17:35:01,471 | INFO | pipeline.persona |   Built personas for Stonington
+2026-05-07 17:35:01,471 | INFO | pipeline.persona |   Built personas for Stratford
+2026-05-07 17:35:01,472 | INFO | pipeline.persona |   Built personas for Suffield
+2026-05-07 17:35:01,473 | INFO | pipeline.persona |   Built personas for Thomaston
+2026-05-07 17:35:01,473 | INFO | pipeline.persona |   Built personas for Thompson
+2026-05-07 17:35:01,474 | INFO | pipeline.persona |   Built personas for Tolland
+2026-05-07 17:35:01,475 | INFO | pipeline.persona |   Built personas for Tolland County
+2026-05-07 17:35:01,475 | INFO | pipeline.persona |   Built personas for Torrington
+2026-05-07 17:35:01,476 | INFO | pipeline.persona |   Built personas for Trumbull
+2026-05-07 17:35:01,477 | INFO | pipeline.persona |   Built personas for Union
+2026-05-07 17:35:01,477 | INFO | pipeline.persona |   Built personas for Vernon
+2026-05-07 17:35:01,478 | INFO | pipeline.persona |   Built personas for Voluntown
+2026-05-07 17:35:01,479 | INFO | pipeline.persona |   Built personas for Wallingford
+2026-05-07 17:35:01,479 | INFO | pipeline.persona |   Built personas for Warren
+2026-05-07 17:35:01,480 | INFO | pipeline.persona |   Built personas for Washington
+2026-05-07 17:35:01,481 | INFO | pipeline.persona |   Built personas for Waterbury
+2026-05-07 17:35:01,481 | INFO | pipeline.persona |   Built personas for Waterford
+2026-05-07 17:35:01,482 | INFO | pipeline.persona |   Built personas for Watertown
+2026-05-07 17:35:01,483 | INFO | pipeline.persona |   Built personas for West Hartford
+2026-05-07 17:35:01,483 | INFO | pipeline.persona |   Built personas for West Haven
+2026-05-07 17:35:01,484 | INFO | pipeline.persona |   Built personas for Westbrook
+2026-05-07 17:35:01,485 | INFO | pipeline.persona |   Built personas for Weston
+2026-05-07 17:35:01,485 | INFO | pipeline.persona |   Built personas for Westport
+2026-05-07 17:35:01,486 | INFO | pipeline.persona |   Built personas for Wethersfield
+2026-05-07 17:35:01,487 | INFO | pipeline.persona |   Built personas for Willington
+2026-05-07 17:35:01,487 | INFO | pipeline.persona |   Built personas for Wilton
+2026-05-07 17:35:01,488 | INFO | pipeline.persona |   Built personas for Winchester
+2026-05-07 17:35:01,489 | INFO | pipeline.persona |   Built personas for Windham
+2026-05-07 17:35:01,489 | INFO | pipeline.persona |   Built personas for Windham County
+2026-05-07 17:35:01,490 | INFO | pipeline.persona |   Built personas for Windsor
+2026-05-07 17:35:01,491 | INFO | pipeline.persona |   Built personas for Windsor Locks
+2026-05-07 17:35:01,491 | INFO | pipeline.persona |   Built personas for Wolcott
+2026-05-07 17:35:01,492 | INFO | pipeline.persona |   Built personas for Woodbridge
+2026-05-07 17:35:01,493 | INFO | pipeline.persona |   Built personas for Woodbury
+2026-05-07 17:35:01,493 | INFO | pipeline.persona |   Built personas for Woodstock
+2026-05-07 17:35:01,495 | INFO | pipeline.persona | All town personas saved → /Users/garretttougas/Downloads/ct-town-personas/data/processed/town_personas_2022.parquet
+2026-05-07 17:35:01,495 | INFO | run_all | 
+✓ Pipeline complete. Output -> /Users/garretttougas/Downloads/ct-town-personas/data/processed
+2026-05-07 17:35:01,495 | INFO | run_all |   Files: ['cluster_centroids.parquet', 'town_clusters.parquet', 'town_personas_2022.parquet', 'town_features_all_years.parquet', 'town_features_2022.parquet']
