@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from ingestion.ctdata_client import CTDataClient
+from ingestion.lodes_client import LODESClient
 from ingestion.socrata_client import SocrataClient
 from pipeline.feature_builder import FeatureBuilder
 from pipeline.cluster import TownClusterer
@@ -31,7 +32,7 @@ def run(year: int = 2022, n_clusters: int = 5):
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
     # ── 1. Ingest CTData ─────────────────────────────────────────────────────
-    logger.info("\n[1/4] Ingesting from data.ctdata.org ...")
+    logger.info("\n[1/5] Ingesting from data.ctdata.org ...")
     ct = CTDataClient()
     wide_frames = []
 
@@ -127,11 +128,21 @@ def run(year: int = 2022, n_clusters: int = 5):
     except Exception as e:
         logger.warning(f"  Business data failed ({e}) — continuing without it")
 
-    # ── 3. Feature engineering ───────────────────────────────────────────────
-    logger.info("\n[2/4] Building feature matrix ...")
+    # ── 3. LODES commute flows ────────────────────────────────────────────────
+    logger.info("\n  Ingesting LODES anchor flows (LODES 2021) ...")
+    lodes_df = pd.DataFrame()
+    try:
+        lodes_df = LODESClient().fetch_anchor_flows(year=2021)
+        logger.info(f"  LODES flows: {lodes_df.shape}")
+    except Exception as e:
+        logger.warning(f"  LODES ingestion failed ({e}) — continuing without commute flows")
+
+    # ── 4. Feature engineering ───────────────────────────────────────────────
+    logger.info("\n[3/5] Building feature matrix ...")
     features_df = FeatureBuilder().build(
         acs_df,
         biz_combined if not biz_combined.empty else None,
+        lodes_df=lodes_df if not lodes_df.empty else None,
         year=year,
     )
     logger.info(f"  Features: {features_df.shape}")
@@ -145,14 +156,14 @@ def run(year: int = 2022, n_clusters: int = 5):
     features_df.to_parquet(all_years_path, index=False)
 
     # ── 4. Clustering ────────────────────────────────────────────────────────
-    logger.info(f"\n[3/4] Clustering towns (k={n_clusters}) ...")
+    logger.info(f"\n[4/5] Clustering towns (k={n_clusters}) ...")
     year_features = features_df[features_df["year"] == year].copy()
     clusters_df   = TownClusterer(n_clusters=n_clusters).fit_predict(year_features)
     centroids_df  = pd.read_parquet(PROCESSED_DIR / "cluster_centroids.parquet")
     logger.info(f"  Archetypes: {clusters_df['cluster_id'].nunique()}")
 
     # ── 5. Personas ──────────────────────────────────────────────────────────
-    logger.info("\n[4/4] Building persona cards ...")
+    logger.info("\n[5/5] Building persona cards ...")
     PersonaBuilder().build_all_towns(year_features, clusters_df, centroids_df, year=year)
 
     logger.info(f"\n✓ Pipeline complete. Output -> {PROCESSED_DIR}")
