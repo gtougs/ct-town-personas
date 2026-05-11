@@ -20,6 +20,7 @@ class FeatureBuilder:
         acs_df: pd.DataFrame,
         biz_df: Optional[pd.DataFrame] = None,
         lodes_df: Optional[pd.DataFrame] = None,
+        gtfs_df: Optional[pd.DataFrame] = None,
         year: Optional[int] = None,
     ) -> pd.DataFrame:
         logger.info("Building feature matrix ...")
@@ -50,6 +51,14 @@ class FeatureBuilder:
             df = df.merge(lodes_df[["town"] + flow_cols], on="town", how="left")
             df[flow_cols] = df[flow_cols].fillna(0)
             logger.info(f"  Joined LODES flows: {flow_cols}")
+
+        # Join GTFS transit metrics (stop_count, has_transit)
+        if gtfs_df is not None and not gtfs_df.empty and "town" in gtfs_df.columns:
+            transit_cols = [c for c in gtfs_df.columns if c in ("stop_count", "has_transit", "agency_count")]
+            df = df.merge(gtfs_df[["town"] + transit_cols], on="town", how="left")
+            df["stop_count"] = df["stop_count"].fillna(0).astype(int)
+            df["has_transit"] = df["has_transit"].fillna(False)
+            logger.info(f"  Joined GTFS transit: {transit_cols}")
 
         PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
         out = PROCESSED_DIR / f"town_features_{year or 'all'}.parquet"

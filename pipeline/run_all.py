@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from ingestion.ctdata_client import CTDataClient
+from ingestion.gtfs_client import GTFSClient
 from ingestion.lodes_client import LODESClient
 from ingestion.socrata_client import SocrataClient
 from ingestion.tiger_client import TIGERClient
@@ -145,12 +146,21 @@ def run(year: int = 2022, n_clusters: int = 5):
     except Exception as e:
         logger.warning(f"  Centroid computation failed ({e}) — drive_time will use fallback table")
 
+    logger.info("\n  Ingesting GTFS transit feeds ...")
+    gtfs_df = pd.DataFrame()
+    try:
+        gtfs_df = GTFSClient().build_town_transit()
+        logger.info(f"  GTFS town transit: {gtfs_df.shape}")
+    except Exception as e:
+        logger.warning(f"  GTFS ingestion failed ({e}) — continuing without transit data")
+
     # ── 4. Feature engineering ───────────────────────────────────────────────
     logger.info("\n[3/5] Building feature matrix ...")
     features_df = FeatureBuilder().build(
         acs_df,
         biz_combined if not biz_combined.empty else None,
         lodes_df=lodes_df if not lodes_df.empty else None,
+        gtfs_df=gtfs_df if not gtfs_df.empty else None,
         year=year,
     )
     logger.info(f"  Features: {features_df.shape}")
