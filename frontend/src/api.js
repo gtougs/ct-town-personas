@@ -7,13 +7,15 @@ async function get(path) {
 }
 
 export const api = {
-  towns:       ()                        => get('/towns-list'),
-  personas:    (town, year)              => get(`/personas/${town}${year ? `?year=${year}` : ''}`),
-  marketer:    (town, year)              => get(`/personas/${town}/marketer${year ? `?year=${year}` : ''}`),
-  business:    (town, year)              => get(`/personas/${town}/business${year ? `?year=${year}` : ''}`),
-  similar:     (town, n = 5)            => get(`/personas/similar/${town}?n=${n}`),
-  forecast:    (town, indicator)        => get(`/forecast/${town}/${indicator}`),
-  allForecasts:(town)                   => get(`/forecast/${town}`),
-  archetypes:  (year)                   => get(`/towns/archetypes/all${year ? `?year=${year}` : ''}`),
-  compare:     (town, compareTo, year)  => get(`/towns/${town}/compare?compare_to=${compareTo}${year ? `&year=${year}` : ''}`),
+  towns:        ()                       => get('/towns-list'),
+  personas:     (town, year)             => get(`/personas/${town}${year ? `?year=${year}` : ''}`),
+  marketer:     (town, year)             => get(`/personas/${town}/marketer${year ? `?year=${year}` : ''}`),
+  business:     (town, year)             => get(`/personas/${town}/business${year ? `?year=${year}` : ''}`),
+  similar:      (town, n = 5)            => get(`/personas/similar/${town}?n=${n}`),
+  forecast:     (town, indicator)        => get(`/forecast/${town}/${indicator}`),
+  allForecasts: (town)                   => get(`/forecast/${town}`),
+  archetypes:   (year)                   => get(`/towns/archetypes/all${year ? `?year=${year}` : ''}`),
+  compare:      (town, compareTo, year)  => get(`/towns/${town}/compare?compare_to=${compareTo}${year ? `&year=${year}` : ''}`),
+  townFeatures:  (town, year)             => get(`/towns/${town}${year ? `?year=${year}` : ''}`),
+  allClusters:   (year)                   => get(`/towns/all-clusters${year ? `?year=${year}` : ''}`),
 }

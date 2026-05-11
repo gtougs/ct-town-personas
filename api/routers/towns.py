@@ -15,6 +15,25 @@ def _state(req: Request):
     return req.app.state
 
 
+
+
+@router.get("/all-clusters")
+def get_all_town_clusters(year: Optional[int] = None, request: Request = None):
+    """
+    Returns archetype label for every town — used by the choropleth map.
+    Lightweight endpoint — just town + archetype_label.
+    """
+    s = _state(request)
+    if s.clusters.empty:
+        raise HTTPException(503, "Data not loaded")
+    year = year or int(s.clusters["year"].max())
+    df = s.clusters[s.clusters["year"] == year][["town", "archetype_label", "dominant_persona_pct"]]
+    return {
+        "year": year,
+        "towns": df.to_dict(orient="records"),
+    }
+
+
 @router.get("/{town}", response_model=TownFeaturesResponse)
 def get_town_features(town: str, year: Optional[int] = None, request: Request = None):
     s = _state(request)

@@ -119,8 +119,8 @@ class ArchetypeResponse(BaseModel):
 class ForecastPoint(BaseModel):
     year: int
     value: float
-    lower: Optional[float]
-    upper: Optional[float]
+    lower: Optional[float] = None
+    upper: Optional[float] = None
 
 
 class IndicatorForecast(BaseModel):
