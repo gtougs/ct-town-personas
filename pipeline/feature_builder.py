@@ -15,7 +15,13 @@ PROCESSED_DIR = Path(__file__).parent.parent / "data" / "processed"
 
 class FeatureBuilder:
 
-    def build(self, acs_df: pd.DataFrame, biz_df: Optional[pd.DataFrame] = None, year: Optional[int] = None) -> pd.DataFrame:
+    def build(
+        self,
+        acs_df: pd.DataFrame,
+        biz_df: Optional[pd.DataFrame] = None,
+        lodes_df: Optional[pd.DataFrame] = None,
+        year: Optional[int] = None,
+    ) -> pd.DataFrame:
         logger.info("Building feature matrix ...")
         df = acs_df.copy()
 
