@@ -76,13 +76,13 @@ def add_drive_columns(
     """
     Add drive_time_min and drive_band columns to a towns DataFrame.
 
-    Expects either town_lat/town_lon columns already present, or falls back
-    to the built-in CT town centroid lookup table.
+    Prefers town_centroids.parquet (computed from LODES block coordinates by
+    TIGERClient) when available. Falls back to the hardcoded lookup table.
     """
     df = df.copy()
 
     if "town_lat" not in df.columns or "town_lon" not in df.columns:
-        centroids = ct_town_centroids()
+        centroids = _load_centroids()
         df = df.merge(centroids, on="town", how="left")
 
     df["drive_time_min"] = df.apply(
@@ -97,6 +97,16 @@ def add_drive_columns(
         lambda t: assign_drive_band(t, day_tripper_max, weekender_max)
     )
     return df
+
+
+def _load_centroids() -> pd.DataFrame:
+    """Load town centroids, preferring the LODES-derived file over the hardcoded table."""
+    from pathlib import Path
+    computed = Path(__file__).parents[1] / "data" / "processed" / "town_centroids.parquet"
+    if computed.exists():
+        df = pd.read_parquet(computed)
+        return df.rename(columns={"centroid_lat": "town_lat", "centroid_lon": "town_lon"})
+    return ct_town_centroids()
 
 
 def ct_town_centroids() -> pd.DataFrame:

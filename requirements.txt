@@ -6,6 +6,7 @@ pydantic>=2.6.0
 sodapy>=2.2.0       # Socrata API (data.ct.gov - business registry)
 requests>=2.31.0    # CKAN API (data.ctdata.org)
 pyyaml>=6.0.1
+pytrends>=4.9.2     # Google Trends (unofficial API — DMA-level interest data)
 
 # Data processing
 pandas>=2.2.0
