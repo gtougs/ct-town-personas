@@ -57,7 +57,7 @@ class FeatureBuilder:
             transit_cols = [c for c in gtfs_df.columns if c in ("stop_count", "has_transit", "agency_count")]
             df = df.merge(gtfs_df[["town"] + transit_cols], on="town", how="left")
             df["stop_count"] = df["stop_count"].fillna(0).astype(int)
-            df["has_transit"] = df["has_transit"].fillna(False)
+            df["has_transit"] = df["has_transit"].fillna(False).astype(bool)
             logger.info(f"  Joined GTFS transit: {transit_cols}")
 
         PROCESSED_DIR.mkdir(parents=True, exist_ok=True)

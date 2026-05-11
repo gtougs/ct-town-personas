@@ -188,7 +188,7 @@ class GTFSClient:
         all_towns = pd.DataFrame({"town": _load_centroids()["town"].tolist()})
         summary = all_towns.merge(summary, on="town", how="left")
         summary["stop_count"] = summary["stop_count"].fillna(0).astype(int)
-        summary["has_transit"] = summary["has_transit"].fillna(False)
+        summary["has_transit"] = summary["has_transit"].fillna(False).astype(bool)
         summary["agency_count"] = summary["agency_count"].fillna(0).astype(int)
         summary["agencies"] = summary["agencies"].fillna("")
 
