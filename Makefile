@@ -42,13 +42,8 @@ validate:
 	@python3 -c "import yaml, sys; reg = yaml.safe_load(open('ingestion/datasets.yaml')); missing = [d['name'] for d in reg['datasets'] if d.get('id') == 'RUN_DISCOVER']; [print(f'  MISSING: {n}') for n in missing]; sys.exit(1) if missing else print('  All IDs filled in') "
 
 pipeline-tune:
-	@echo "→ Running cluster tuning (elbow + silhouette)..." 
-	PYTHONPATH=. python -c "
-from pipeline.cluster import TownClusterer
-import pandas as pd
-df = pd.read_parquet('data/processed/town_features_all_years.parquet')
-TownClusterer().tune_k(df)
-"
+	@echo "→ Running cluster tuning (elbow + silhouette)..."
+	PYTHONPATH=. python -c "import pandas as pd; from pipeline.cluster import TownClusterer; df = pd.read_parquet('data/processed/town_features_all_years.parquet'); TownClusterer().tune_k(df)"
 
 # ── API ───────────────────────────────────────────────────────────────────────
 api:
@@ -110,7 +105,7 @@ help:
 	@echo "  make install          Install all Python + frontend deps"
 	@echo "  make pipeline         Run full ETL + ML pipeline"
 	@echo "  make pipeline YEAR=2021  Run for a specific ACS vintage"
-	@echo "  make mock              Generate mock data (no API keys)
+	@echo "  make mock              Generate mock data (no API keys)"
 	@echo "  make pipeline-tune    Tune number of clusters (elbow analysis)"
 	@echo "  make api              Start FastAPI dev server"
 	@echo "  make frontend         Start React dev server"
