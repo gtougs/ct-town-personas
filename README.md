@@ -75,6 +75,11 @@ Every quantitative claim in published work is traceable to one of these sources.
 | CT Education Attendance (Socrata) | Annual | District-level signals |
 | Population Projections (Socrata) | Periodic | Forecasting inputs |
 | Google Trends (pytrends) | Weekly pull, DMA-level | Marketing intensity proxy |
+| CT Open Data POI / Attractions (data.ct.gov) | Periodic | Attraction universe, comparable destination benchmarking |
+| GTFS static feeds (CTtransit, CTfastrak, CTrail Hartford Line, Shore Line East) | Periodic | Transit accessibility, stop proximity, corridor reachability |
+| CT DOT Traffic Counts / AADT (data.ct.gov) | Annual | Road accessibility proxy, corridor weighting |
+| Disproportionately Impacted Areas tract list (data.ct.gov) | Periodic | Equity context layer |
+| State Tourism Tracker / VISIONS | Published reports | Benchmark context only — reference, not a feed |
 
 No paid feeds. No proprietary visitor data. No location-intelligence subscriptions.
 
@@ -176,6 +181,7 @@ ct-town-personas/
 │   ├── lodes_client.py          LODES Origin-Destination client
 │   ├── tiger_client.py          TIGER block centroid client
 │   ├── trends_client.py         Google Trends via pytrends
+│   ├── gtfs_client.py           GTFS static feeds (CTtransit, CTfastrak, CTrail lines)
 │   └── datasets.yaml            Dataset registry + field maps
 ├── pipeline/
 │   ├── feature_builder.py       Raw → indicator matrix

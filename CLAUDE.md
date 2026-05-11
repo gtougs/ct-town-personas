@@ -30,6 +30,7 @@ New modules being added (from the now-archived ct-tourism-intelligence work, por
 - `ingestion/lodes_client.py` — LODES OD flows for Hartford, New Haven, Stamford, Bridgeport
 - `ingestion/tiger_client.py` — block centroids for drive-time
 - `ingestion/trends_client.py` — Google Trends via pytrends, DMA-level
+- `ingestion/gtfs_client.py` — GTFS static feeds (CTtransit, CTfastrak, CTrail lines); stop proximity and route reachability
 - `pipeline/drive_time.py` — haversine × road factor, configurable
 - `pipeline/anchors.py` — attraction config + opportunity scoring
 - `pipeline/behavior_overlay.py` — Day-Tripper / Weekender / Local Repeat assignment
@@ -91,12 +92,20 @@ If a request points toward any of the above, ask the user before proceeding.
 | CT Education Attendance | Annual | District-level signals (post #4 use case) |
 | Population Projections | Periodic | Prophet forecasting inputs |
 | Google Trends (pytrends) | Weekly pull, DMA-level | Marketing intensity proxy (post #3) |
+| CT Open Data POI / Attractions (data.ct.gov) | Periodic | Attraction universe, comparable destination benchmarking |
+| GTFS static feeds (CTtransit, CTfastrak, CTrail Hartford Line, Shore Line East) | Periodic | Transit accessibility, stop proximity, corridor reachability |
+| CT DOT Traffic Counts / AADT (data.ct.gov) | Annual | Road accessibility proxy, corridor weighting |
+| Disproportionately Impacted Areas tract list (data.ct.gov) | Periodic | Equity context layer |
+| State Tourism Tracker / VISIONS | Published reports | Benchmark context only — reference, not a feed |
 
 **Data caveats Claude should never let slide:**
 - Town suppression: ~162/169 towns survive Census privacy thresholds. Note in any output.
 - Google Trends is DMA-level, not town-level. Post #3 framing must respect this.
 - LODES has a 2-year publication lag. Always cite the data vintage.
 - Race composition has small-population reliability issues; surface margin of error where possible.
+- GTFS feeds describe scheduled service, not actual ridership. Transit accessibility claims are supply-side only.
+- CT DOT AADT counts are point measurements at specific road segments, not town-level averages. Aggregate carefully.
+- State Tourism Tracker / VISIONS is benchmark context only — do not use as a data feed or derive town-level numbers from it.
 
 ---
 
