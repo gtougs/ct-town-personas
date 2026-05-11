@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { useFetch } from '../hooks/useFetch.js'
-import { api } from '../api.js'
 
 const ARCHETYPE_COLORS = {
   "Mainstream CT Suburban":     "#5b7fa6",
@@ -26,34 +24,9 @@ export default function CTMap({ onTownSelect, selectedTown }) {
   const [geoError, setGeoError] = useState(false)
   const [tooltip, setTooltip]   = useState(null)
 
-  // Fetch cluster data from our API
-  const { data: archetypeData } = useFetch(() => api.archetypes(), [])
-
-  // Build town → archetype lookup
-  const townArchetype = {}
-  if (archetypeData?.archetypes) {
-    // We need the full cluster list — fetch it differently
-  }
-
-  // Fetch full cluster assignments
-  const { data: clusterData } = useFetch(
-    () => fetch('/api/towns/archetypes/all').then(r => r.json()),
-    []
-  )
-
-  const archetypeMap = {}
-  if (clusterData?.archetypes) {
-    clusterData.archetypes.forEach(a => {
-      // For now use representative towns; ideally we'd have all towns
-      // TODO: add /towns/all-clusters endpoint
-    })
-  }
-
-  // Use the personas endpoint approach — fetch clusters directly
   const [allClusters, setAllClusters] = useState({})
 
   useEffect(() => {
-    // Use the efficient all-clusters endpoint
     fetch('/api/towns/all-clusters')
       .then(r => r.json())
       .then(d => {
