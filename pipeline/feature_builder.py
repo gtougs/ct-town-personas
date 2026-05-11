@@ -44,6 +44,13 @@ class FeatureBuilder:
 
         df["year"] = year or df.get("year", pd.Series([2022] * len(df)))
 
+        # Join LODES anchor flow columns (inbound_to_hartford, etc.)
+        if lodes_df is not None and not lodes_df.empty and "town" in lodes_df.columns:
+            flow_cols = [c for c in lodes_df.columns if c.startswith("inbound_to_")]
+            df = df.merge(lodes_df[["town"] + flow_cols], on="town", how="left")
+            df[flow_cols] = df[flow_cols].fillna(0)
+            logger.info(f"  Joined LODES flows: {flow_cols}")
+
         PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
         out = PROCESSED_DIR / f"town_features_{year or 'all'}.parquet"
         df.to_parquet(out, index=False)

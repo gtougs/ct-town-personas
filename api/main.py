@@ -31,6 +31,11 @@ async def lifespan(app: FastAPI):
         app.state.features  = pd.DataFrame()
         app.state.clusters  = pd.DataFrame()
         app.state.centroids = pd.DataFrame()
+
+    lodes_path = PROCESSED_DIR / "lodes_anchor_flows_2021.parquet"
+    app.state.lodes = pd.read_parquet(lodes_path) if lodes_path.exists() else pd.DataFrame()
+    if not app.state.lodes.empty:
+        logger.info(f"  Loaded LODES anchor flows: {len(app.state.lodes)} towns")
     yield
 
 
@@ -50,11 +55,12 @@ app.add_middleware(
 )
 
 # Routers imported after app is created to avoid circular imports
-from api.routers import towns, personas, forecast  # noqa: E402
+from api.routers import towns, personas, forecast, anchors  # noqa: E402
 
 app.include_router(towns.router,    prefix="/towns",    tags=["Towns"])
 app.include_router(personas.router, prefix="/personas", tags=["Personas"])
 app.include_router(forecast.router, prefix="/forecast", tags=["Forecast"])
+app.include_router(anchors.router,  prefix="/anchors",  tags=["Anchors"])
 
 
 @app.get("/", tags=["Health"])

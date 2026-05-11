@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from ingestion.ctdata_client import CTDataClient
 from ingestion.lodes_client import LODESClient
 from ingestion.socrata_client import SocrataClient
+from ingestion.tiger_client import TIGERClient
 from pipeline.feature_builder import FeatureBuilder
 from pipeline.cluster import TownClusterer
 from pipeline.persona import PersonaBuilder
@@ -128,7 +129,7 @@ def run(year: int = 2022, n_clusters: int = 5):
     except Exception as e:
         logger.warning(f"  Business data failed ({e}) — continuing without it")
 
-    # ── 3. LODES commute flows ────────────────────────────────────────────────
+    # ── 3. LODES commute flows + TIGER town centroids ─────────────────────────
     logger.info("\n  Ingesting LODES anchor flows (LODES 2021) ...")
     lodes_df = pd.DataFrame()
     try:
@@ -136,6 +137,13 @@ def run(year: int = 2022, n_clusters: int = 5):
         logger.info(f"  LODES flows: {lodes_df.shape}")
     except Exception as e:
         logger.warning(f"  LODES ingestion failed ({e}) — continuing without commute flows")
+
+    logger.info("\n  Computing town centroids from LODES block coordinates ...")
+    try:
+        TIGERClient().fetch_town_centroids()
+        logger.info("  Town centroids cached -> data/processed/town_centroids.parquet")
+    except Exception as e:
+        logger.warning(f"  Centroid computation failed ({e}) — drive_time will use fallback table")
 
     # ── 4. Feature engineering ───────────────────────────────────────────────
     logger.info("\n[3/5] Building feature matrix ...")

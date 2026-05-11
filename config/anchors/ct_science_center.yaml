@@ -1,0 +1,35 @@
+# Anchor: Connecticut Science Center
+# The primary demo target for ct-town-personas source-market analysis.
+# Adjust demographic_weights to model a different attraction's audience profile.
+
+name: "Connecticut Science Center"
+short_name: ct_science_center
+
+location:
+  address: "250 Columbus Blvd, Hartford, CT 06103"
+  lat: 41.7659
+  lon: -72.6693
+  town: Hartford
+
+drive_bands:
+  day_tripper:
+    max_minutes: 90
+  weekender:
+    max_minutes: 180
+
+# Weights must sum to 1.0.
+# Science centers skew family + educated; adjust per-attraction as needed.
+demographic_weights:
+  median_household_income:   0.25
+  pct_families_with_children: 0.30
+  pct_bachelors_plus:         0.20
+  median_age:                 0.10
+  population:                 0.15
+
+comparables:
+  - name: "Mystic Aquarium"
+    town: Mystic
+  - name: "Peabody Museum of Natural History"
+    town: New Haven
+  - name: "EcoTarium"
+    town: Worcester
