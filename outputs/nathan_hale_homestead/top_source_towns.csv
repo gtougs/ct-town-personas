@@ -1,0 +1,16 @@
+rank,town,arbitrage_score,drive_time_min,drive_band,tourism_behavior,weighted_flow,median_household_income,archetype_label
+1,Coventry,1.0,1.8,Day-Tripper,Local Repeat Visitor,425.4,93619.0,Affluent Suburban
+2,Tolland,0.0815,13.6,Day-Tripper,Local Repeat Visitor,594.9,118367.0,Affluent Suburban
+3,Andover,0.0665,9.2,Day-Tripper,Local Repeat Visitor,128.79999999999998,99449.0,Affluent Suburban
+4,Hebron,0.0663,15.6,Day-Tripper,Local Repeat Visitor,425.99999999999994,126045.0,Affluent Suburban
+5,Bolton,0.0516,15.1,Day-Tripper,Local Repeat Visitor,211.5,112622.0,Affluent Suburban
+6,South Windsor,0.0433,22.7,Day-Tripper,Day-Tripper,1483.5,119972.0,Affluent Suburban
+7,Glastonbury,0.0398,24.5,Day-Tripper,Day-Tripper,1812.8,120605.0,Affluent Suburban
+8,Columbia,0.037,15.9,Day-Tripper,Local Repeat Visitor,168.1,104911.0,Affluent Suburban
+9,Marlborough,0.0341,20.9,Day-Tripper,Day-Tripper,252.8,113547.0,Affluent Suburban
+10,Ellington,0.0242,20.4,Day-Tripper,Day-Tripper,673.9,89645.0,Affluent Suburban
+11,West Hartford,0.017,39.0,Day-Tripper,Day-Tripper,3878.3999999999996,105230.0,Affluent Suburban
+12,Manchester,0.0166,17.6,Day-Tripper,Local Repeat Visitor,2698.4,74270.0,Mixed-Income Transitional
+13,Colchester,0.0164,27.1,Day-Tripper,Day-Tripper,153.79999999999998,107914.0,Affluent Suburban
+14,Somers,0.0161,31.1,Day-Tripper,Day-Tripper,213.5,106305.0,Affluent Suburban
+15,East Hampton,0.0156,30.6,Day-Tripper,Day-Tripper,460.99999999999994,95663.0,Affluent Suburban

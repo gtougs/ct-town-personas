@@ -1,0 +1,16 @@
+rank,town,arbitrage_score,drive_time_min,drive_band,tourism_behavior,weighted_flow,median_household_income,archetype_label
+1,Stonington,1.0,7.6,Day-Tripper,Local Repeat Visitor,89.5,93349.0,Affluent Suburban
+2,Ledyard,0.2597,17.8,Day-Tripper,Local Repeat Visitor,85.6,92439.0,Affluent Suburban
+3,Waterford,0.2263,18.6,Day-Tripper,Local Repeat Visitor,86.70000000000002,90670.0,Affluent Suburban
+4,East Lyme,0.1988,26.4,Day-Tripper,Day-Tripper,112.00000000000001,96023.0,Affluent Suburban
+5,Groton,0.1858,13.2,Day-Tripper,Local Repeat Visitor,212.29999999999998,68849.0,Affluent Suburban
+6,Glastonbury,0.1616,54.8,Day-Tripper,Day-Tripper,715.7,120605.0,Affluent Suburban
+7,Guilford,0.1552,54.3,Day-Tripper,Day-Tripper,961.0000000000001,108243.0,Affluent Suburban
+8,Montville,0.1329,22.3,Day-Tripper,Day-Tripper,104.2,80765.0,Affluent Suburban
+9,Durham,0.1319,54.1,Day-Tripper,Day-Tripper,189.3,130635.0,Affluent Suburban
+10,South Windsor,0.1215,62.7,Day-Tripper,Day-Tripper,542.5000000000001,119972.0,Affluent Suburban
+11,Madison,0.1175,65.0,Day-Tripper,Day-Tripper,591.9000000000001,119777.0,Affluent Suburban
+12,Cheshire,0.1147,70.4,Day-Tripper,Day-Tripper,803.4000000000001,122477.0,Affluent Suburban
+13,Tolland,0.1145,57.2,Day-Tripper,Day-Tripper,217.4,118367.0,Affluent Suburban
+14,Hebron,0.1122,56.2,Day-Tripper,Day-Tripper,154.70000000000002,126045.0,Affluent Suburban
+15,Preston,0.1091,18.9,Day-Tripper,Local Repeat Visitor,22.400000000000002,87885.0,Affluent Suburban

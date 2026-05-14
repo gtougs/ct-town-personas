@@ -1,0 +1,11 @@
+,CT Science Center,Mark Twain House,Wadsworth Atheneum,New Britain Museum,Mystic Aquarium,Pequot Museum,Florence Griswold Museum,Nathan Hale Homestead,Maritime Aquarium,Kent Falls State Park
+CT Science Center,1.0,0.765,1.0,0.579,0.071,0.111,0.0,0.154,0.0,0.2
+Mark Twain House,0.765,1.0,0.765,0.579,0.071,0.111,0.0,0.111,0.0,0.2
+Wadsworth Atheneum,1.0,0.765,1.0,0.579,0.071,0.111,0.0,0.154,0.0,0.2
+New Britain Museum,0.579,0.579,0.579,1.0,0.111,0.154,0.0,0.111,0.0,0.2
+Mystic Aquarium,0.071,0.071,0.071,0.111,1.0,0.765,0.2,0.154,0.0,0.071
+Pequot Museum,0.111,0.111,0.111,0.154,0.765,1.0,0.2,0.2,0.0,0.071
+Florence Griswold Museum,0.0,0.0,0.0,0.0,0.2,0.2,1.0,0.034,0.0,0.0
+Nathan Hale Homestead,0.154,0.111,0.154,0.111,0.154,0.2,0.034,1.0,0.0,0.071
+Maritime Aquarium,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.25
+Kent Falls State Park,0.2,0.2,0.2,0.2,0.071,0.071,0.0,0.071,0.25,1.0

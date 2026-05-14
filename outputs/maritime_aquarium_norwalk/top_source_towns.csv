@@ -1,0 +1,16 @@
+rank,town,arbitrage_score,drive_time_min,drive_band,tourism_behavior,weighted_flow,median_household_income,archetype_label
+1,Norwalk,1.0,2.1,Day-Tripper,Local Repeat Visitor,4663.500000000001,89486.0,Mixed-Income Transitional
+2,Darien,0.1741,11.3,Day-Tripper,Local Repeat Visitor,861.7999999999998,243750.0,Rural / Small Town
+3,Westport,0.1418,12.8,Day-Tripper,Local Repeat Visitor,753.4,222375.0,Rural / Small Town
+4,Wilton,0.1316,13.4,Day-Tripper,Local Repeat Visitor,800.7,204473.0,Rural / Small Town
+5,New Canaan,0.1038,15.5,Day-Tripper,Local Repeat Visitor,733.1999999999999,200203.0,Rural / Small Town
+6,Weston,0.0905,15.9,Day-Tripper,Local Repeat Visitor,301.9,207863.0,Rural / Small Town
+7,Fairfield,0.0851,18.1,Day-Tripper,Local Repeat Visitor,2433.8,140308.0,Rural / Small Town
+8,Greenwich,0.0662,21.6,Day-Tripper,Day-Tripper,1833.0,167537.0,Rural / Small Town
+9,Easton,0.0482,23.6,Day-Tripper,Day-Tripper,287.7,166875.0,Rural / Small Town
+10,Ridgefield,0.0435,27.1,Day-Tripper,Day-Tripper,707.1,152630.0,Rural / Small Town
+11,Redding,0.041,26.2,Day-Tripper,Day-Tripper,311.59999999999997,135928.0,Rural / Small Town
+12,Trumbull,0.0407,28.5,Day-Tripper,Day-Tripper,1716.1,129239.0,Affluent Suburban
+13,Monroe,0.0255,36.0,Day-Tripper,Day-Tripper,689.2,121847.0,Affluent Suburban
+14,Newtown,0.0212,41.2,Day-Tripper,Day-Tripper,617.9,125028.0,Affluent Suburban
+15,Orange,0.0178,45.2,Day-Tripper,Day-Tripper,358.70000000000005,129489.0,Affluent Suburban

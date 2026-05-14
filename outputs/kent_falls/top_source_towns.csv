@@ -1,0 +1,16 @@
+rank,town,arbitrage_score,drive_time_min,drive_band,tourism_behavior,weighted_flow,median_household_income,archetype_label
+1,Warren,1.0,13.5,Day-Tripper,Local Repeat Visitor,11.999999999999998,121875.0,Affluent Suburban
+2,New Milford,0.9901,24.5,Day-Tripper,Day-Tripper,110.9,93815.0,Affluent Suburban
+3,Goshen,0.9502,18.9,Day-Tripper,Local Repeat Visitor,19.3,117438.0,Affluent Suburban
+4,Trumbull,0.8157,52.7,Day-Tripper,Day-Tripper,428.40000000000003,129239.0,Affluent Suburban
+5,Burlington,0.7899,46.0,Day-Tripper,Day-Tripper,175.70000000000002,129783.0,Affluent Suburban
+6,Avon,0.7664,54.2,Day-Tripper,Day-Tripper,445.99999999999994,123077.0,Rural / Small Town
+7,Fairfield,0.7656,60.0,Day-Tripper,Day-Tripper,665.0,140308.0,Rural / Small Town
+8,Wilton,0.7295,55.5,Day-Tripper,Day-Tripper,250.0,204473.0,Rural / Small Town
+9,Simsbury,0.7292,59.1,Day-Tripper,Day-Tripper,596.7,128829.0,Affluent Suburban
+10,Glastonbury,0.7028,61.6,Day-Tripper,Day-Tripper,936.3,120605.0,Affluent Suburban
+11,Newtown,0.6778,50.1,Day-Tripper,Day-Tripper,178.3,125028.0,Affluent Suburban
+12,South Windsor,0.6624,62.2,Day-Tripper,Day-Tripper,767.6999999999999,119972.0,Affluent Suburban
+13,Westport,0.6136,61.8,Day-Tripper,Day-Tripper,242.1,222375.0,Rural / Small Town
+14,New Canaan,0.611,60.9,Day-Tripper,Day-Tripper,233.20000000000002,200203.0,Rural / Small Town
+15,Brookfield,0.6084,40.5,Day-Tripper,Day-Tripper,88.30000000000001,117292.0,Affluent Suburban

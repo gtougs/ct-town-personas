@@ -1,0 +1,11 @@
+attraction_key,display_name,mean_drive_min,std_drive_min,county_count,counties
+mark_twain_house,Mark Twain House,17.3,5.0,1,Hartford
+nbmaa,New Britain Museum,17.8,7.2,3,"Hartford, Middlesex, New Haven"
+wadsworth_atheneum,Wadsworth Atheneum,18.0,4.4,3,"Hartford, Middlesex, Tolland"
+ct_science_center,CT Science Center,18.2,4.4,3,"Hartford, Middlesex, Tolland"
+nathan_hale_homestead,Nathan Hale Homestead,20.3,9.4,4,"Hartford, Middlesex, New London, Tolland"
+florence_griswold,Florence Griswold Museum,22.0,9.8,3,"Middlesex, New Haven, New London"
+maritime_aquarium_norwalk,Maritime Aquarium,22.6,11.8,2,"Fairfield, New Haven"
+pequot_museum,Pequot Museum,38.2,21.6,5,"Hartford, Middlesex, New Haven, New London, Tolland"
+mystic_aquarium,Mystic Aquarium,40.0,22.2,5,"Hartford, Middlesex, New Haven, New London, Tolland"
+kent_falls,Kent Falls State Park,48.1,16.4,3,"Fairfield, Hartford, Litchfield"

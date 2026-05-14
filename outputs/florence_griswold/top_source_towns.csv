@@ -1,0 +1,16 @@
+rank,town,arbitrage_score,drive_time_min,drive_band,tourism_behavior,weighted_flow,median_household_income,archetype_label
+1,Old Lyme,1.0,5.1,Day-Tripper,Local Repeat Visitor,48.4,105417.0,Affluent Suburban
+2,Old Saybrook,0.3844,10.3,Day-Tripper,Local Repeat Visitor,176.0,86802.0,Affluent Suburban
+3,Essex,0.2751,15.4,Day-Tripper,Local Repeat Visitor,107.1,102243.0,Affluent Suburban
+4,Madison,0.2703,27.5,Day-Tripper,Day-Tripper,699.8,119777.0,Affluent Suburban
+5,East Lyme,0.2345,17.7,Day-Tripper,Local Repeat Visitor,141.4,96023.0,Affluent Suburban
+6,Clinton,0.2121,20.0,Day-Tripper,Local Repeat Visitor,356.1,90332.0,Affluent Suburban
+7,Guilford,0.1812,35.9,Day-Tripper,Day-Tripper,1154.1,108243.0,Affluent Suburban
+8,Killingworth,0.1707,25.7,Day-Tripper,Day-Tripper,189.1,104462.0,Affluent Suburban
+9,Haddam,0.1512,28.7,Day-Tripper,Day-Tripper,166.6,107073.0,Affluent Suburban
+10,East Haddam,0.1411,23.1,Day-Tripper,Day-Tripper,122.8,95685.0,Affluent Suburban
+11,Waterford,0.1393,19.3,Day-Tripper,Local Repeat Visitor,107.5,90670.0,Affluent Suburban
+12,Durham,0.1338,40.2,Day-Tripper,Day-Tripper,244.0,130635.0,Affluent Suburban
+13,Westbrook,0.1194,13.3,Day-Tripper,Local Repeat Visitor,122.9,73988.0,Affluent Suburban
+14,Colchester,0.1096,32.7,Day-Tripper,Day-Tripper,112.89999999999999,107914.0,Affluent Suburban
+15,Deep River,0.109,14.4,Day-Tripper,Local Repeat Visitor,70.5,80495.0,Affluent Suburban
